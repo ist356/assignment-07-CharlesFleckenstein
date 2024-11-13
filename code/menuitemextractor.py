@@ -7,13 +7,33 @@ else:
 
 
 def clean_price(price:str) -> float:
-    pass # TODO  replace with code
+    price_out = price.strip().replace('$','').replace(',','')
+    return float(price_out)
 
 def clean_scraped_text(scraped_text: str) -> list[str]:
-    pass # TODO  replace with code
+    items = scraped_text.split("\n")
+    cleaned_ = []
+    for item in items:
+        if item in ['GS','V','S' , 'P']:
+            continue
+        if item.startswith("NEW"):
+            continue 
+        if len(item.strip()) ==0:
+            continue
+        cleaned_.append(item)
 
+    return cleaned_        
+   
 def extract_menu_item(title:str, scraped_text: str) -> MenuItem:
-    pass # TODO  replace with code
+    items = clean_scraped_text(scraped_text)
+    item = MenuItem(category=title, name="", price=0.0, description="")
+    item.name = items[0]
+    item.price = clean_price(items[1])
+    if len(items) > 2:
+        item.description = items[2]
+    else:
+        item.description = "No description available"
+    return item
 
 
 
