@@ -23,3 +23,4 @@ Examples:
 
 `--- Reflection Below This Line ---`
 
+I did good with this assignment, there were a few parts where it took me a seond to find selectors and how to filter for menu item selectors like glutten free and vegan but i got it after a but(copilot started auto filling which was kind of annoying ). took me a secodn to do the tully scraper but once i got the algortihm it was quick. Kind of hard to do code in multiple sitting becasue i forget what i was doing.
